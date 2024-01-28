@@ -39,15 +39,6 @@ const imageToCanvas = (img: HTMLImageElement) => {
     return canvas;
 }
 
-const placeholder = () => document.createElement('img');
-
-/**
- * Take an image element, create an anonymous one and try to fetch.
- * On error, return placeholder image
- * @param el
- */
-const image = (el: HTMLImageElement) => fetchImage(el.src).catch(placeholder);
-
 export interface ImagifyOptions {
     height?: number;
     width?: number;

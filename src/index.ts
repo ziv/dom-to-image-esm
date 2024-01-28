@@ -57,6 +57,7 @@ export interface ImagifyOptions {
  * @todo add support for remote resources
  * @todo add support for frames
  * @todo add support for shadow
+ * @todo add pseudo elements to styles
  *
  * @param node HTMLElement
  * @param options ImagifyOptions

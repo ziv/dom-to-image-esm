@@ -1,6 +1,6 @@
 export function toImage(svg: string): HTMLImageElement {
     const img = document.createElement('img');
-    img.src = svg;
+    img.src = `data:image/svg+xml;charset=utf-8,${svg}`;
     return img;
 }
 

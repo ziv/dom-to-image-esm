@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Imagify</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+        #example {
+            height: 100px;
+            width: 300px;
+            display: flex;
+        }
+
+        #example div {
+            width: 100px;
+            display: flex;
+        }
+
+        #example div:nth-child(1) {
+            background-color: red;
+
+        }
+
+        #example div:nth-child(2) {
+            background-color: yellow;
+            align-items: center;
+        }
+
+        #example div:nth-child(3) {
+            background-color: green;
+            align-items: end;
+        }
+    </style>
+</head>
+<body>
+<button>COPY DOM</button>
+<div>
+    <div id="example">
+        <div>EXAMPLE</div>
+        <div>EXAMPLE</div>
+        <div>EXAMPLE</div>
+    </div>
+</div>
+<script>
+    const click = () => import('../lib')
+        .then(m => m.toSvg(document.getElementById('example')))
+        .then(svg => {
+            const img = document.createElement('img');
+            img.addEventListener('error', e => console.log(e));
+            img.src = `data:image/svg+xml;charset=utf-8,${svg}`;
+            document.body.appendChild(img);
+        });
+    document.querySelector('button').addEventListener('click', click);
+</script>
+</body>
+</html>

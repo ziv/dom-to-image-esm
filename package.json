@@ -1,0 +1,27 @@
+{
+  "name": "imagify",
+  "version": "0.0.0",
+  "description": "DOM to image tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "av"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ziv/imagify.git"
+  },
+  "keywords": [
+    "dom",
+    "image",
+    "dom to image",
+    "domtoimage",
+    "dom2image",
+    "dom-to-image"
+  ],
+  "author": "Ziv Perry",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ziv/imagify/issues"
+  },
+  "homepage": "https://github.com/ziv/imagify#readme"
+}

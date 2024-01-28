@@ -5,6 +5,7 @@ function* pair(org: HTMLElement, cloned: HTMLElement): Generator<[HTMLElement, H
             yield* next(node.childNodes[i] as HTMLElement);
         }
     }
+
     const itr = next(cloned);
     for (const orig of next(org)) {
         const cloned = itr.next().value;
@@ -12,8 +13,18 @@ function* pair(org: HTMLElement, cloned: HTMLElement): Generator<[HTMLElement, H
     }
 }
 
+const fetchImage = (url: string) => new Promise<HTMLImageElement>((resolve) => {
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.addEventListener('load', () => resolve(img));
+    img.addEventListener('error', () => resolve(new Image()));
+    img.src = url;
+});
+
+
 const imageFromUrl = (url: string) => new Promise<HTMLImageElement>((resolve) => {
     const img = new Image();
+    img.crossOrigin = 'anonymous';
     img.addEventListener('load', () => resolve(img));
     img.src = url;
 });
@@ -28,14 +39,27 @@ const imageToCanvas = (img: HTMLImageElement) => {
     return canvas;
 }
 
+const placeholder = () => document.createElement('img');
+
+/**
+ * Take an image element, create an anonymous one and try to fetch.
+ * On error, return placeholder image
+ * @param el
+ */
+const image = (el: HTMLImageElement) => fetchImage(el.src).catch(placeholder);
+
 export interface ImagifyOptions {
     height?: number;
     width?: number;
     size?: number;
 }
 
+// todo fix images
 // todo image type and quality should be optional?
 // todo copy image - research with impl is better (canvas, or fetch)
+// todo copy svg or dataUrl not supported yet
+// todo add background to exported image
+// todo fix stretch on sizing
 
 /**
  * Convert HTMLElement to SVG string
@@ -60,9 +84,9 @@ export async function toSvg(node: HTMLElement, options?: ImagifyOptions) {
     for (const [org, cloned] of pair(node, copy)) {
         // content
         if (org instanceof HTMLCanvasElement) {
-            cloned.replaceWith(await imageFromUrl(canvasToUrl(org)));
+            // cloned.replaceWith(await imageFromUrl(canvasToUrl(org)));
         } else if (org instanceof HTMLImageElement) {
-            cloned.replaceWith(await imageFromUrl(canvasToUrl(imageToCanvas(org))));
+            // cloned.replaceWith(await imageFromUrl(canvasToUrl(imageToCanvas(org))));
         } else if (org instanceof HTMLInputElement) {
             cloned.setAttribute('value', org.value);
         } else if (org instanceof HTMLTextAreaElement) {

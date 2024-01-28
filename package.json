@@ -1,11 +1,10 @@
 {
   "name": "imagify",
+  "type": "module",
   "version": "0.0.0",
   "description": "DOM to image tool",
   "main": "index.js",
-  "scripts": {
-    "test": "av"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/ziv/imagify.git"

@@ -10,5 +10,5 @@ Usage:
 ```typescript
 import { toSvg } from 'imagify';
 
-toSvg(document.querySelector('.example')).then(svg => {});
+toSvg(document.querySelector('.example').then(svg => {});
 ```

@@ -1,5 +1,5 @@
 {
-  "name": "imagify",
+  "name": "@xpr/imagify",
   "type": "module",
   "version": "0.0.0",
   "description": "DOM to image tool",
@@ -22,5 +22,10 @@
   "bugs": {
     "url": "https://github.com/ziv/imagify/issues"
   },
-  "homepage": "https://github.com/ziv/imagify#readme"
+  "homepage": "https://github.com/ziv/imagify#readme",
+  "devDependencies": {
+    "typescript": "^5.5.3",
+    "vite": "^5.3.4",
+    "vite-plugin-dts": "^4.0.0-beta.1"
+  }
 }

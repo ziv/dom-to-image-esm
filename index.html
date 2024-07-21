@@ -50,17 +50,6 @@
         </div>
     </div>
 </div>
-<script>
-    const click = () => import('./index.js')
-        .then(m => m.toSvg(document.getElementById('example')))
-        .then(svg => {
-            const img = document.createElement('img');
-            img.addEventListener('error', e => console.log(e));
-            img.src = `data:image/svg+xml;charset=utf-8,${svg}`;
-            document.body.appendChild(img);
-        });
-
-    document.querySelector('button').addEventListener('click', click);
-</script>
+<script type="module" src="src/demo.ts"></script>
 </body>
 </html>

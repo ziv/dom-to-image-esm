@@ -4,7 +4,9 @@
   "version": "0.1.1",
   "description": "DOM to image tool",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "build": "vite build && cp package*.json dist/."
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/ziv/imagify.git"

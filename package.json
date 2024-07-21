@@ -1,31 +1,29 @@
 {
-  "name": "@xpr/imagify",
+  "name": "@xpr/nitrogen-themes",
   "type": "module",
-  "version": "0.2.2",
-  "description": "DOM to image tool",
+  "version": "0.0.1",
+  "description": "themes for nitrogen app",
   "main": "index.js",
   "scripts": {
     "build": "vite build && cp package*.json dist/."
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/ziv/imagify.git"
+    "url": "git+ssh://git@github.com/ziv/nitrogen-themes.git"
   },
   "keywords": [
-    "dom",
-    "image",
-    "dom to image",
-    "domtoimage",
-    "dom2image",
-    "dom-to-image"
   ],
   "author": "Ziv Perry",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ziv/imagify/issues"
+    "url": "https://github.com/ziv/nitrogen-themes/issues"
   },
-  "homepage": "https://github.com/ziv/imagify#readme",
+  "homepage": "https://github.com/ziv/nitrogen-themes#readme",
   "devDependencies": {
+    "@codemirror/language": "^6.10.2",
+    "@codemirror/state": "^6.4.1",
+    "@codemirror/view": "^6.28.6",
+    "@lezer/highlight": "^1.2.0",
     "typescript": "^5.5.3",
     "vite": "^5.3.4",
     "vite-plugin-dts": "^4.0.0-beta.1"

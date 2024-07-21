@@ -5,13 +5,13 @@ export default defineConfig({
     build: {
         lib: {
             entry: {
-                'index' : 'src/index.ts',
-                'utils': 'src/utils.ts'
+                'amy' : 'src/amy.ts',
+                'dracula': 'src/dracula.ts'
             },
             formats: ['es'],
         },
     },
     plugins: [
-        dts({ include: ['src'], exclude: ['src/demo.ts'] })
+        dts({ include: ['src'], exclude: ['src/utils.ts'] })
     ]
 });

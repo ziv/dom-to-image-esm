@@ -1,14 +1,14 @@
 # Imagify
 
-DOM to image tool.
+DOM/Imaging utilities
 
 ```shell
-npm install imagify
+npm install @xpr/imagify
 ```
 
 Usage:
 ```typescript
-import { toSvg } from 'imagify';
+import { domNodeToSvg } from 'imagify';
 
-toSvg(document.querySelector('.example').then(svg => {});
+domNodeToSvg(document.querySelector('.example').then(svg => {});
 ```
